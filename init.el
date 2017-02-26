@@ -10,8 +10,9 @@
 (add-to-list 'load-path "~/.emacs.d/")
 
 ;;color theme
-(add-to-list 'load-path "~/.emacs.d/emacs-solarized")
-(require 'solarized-dark-theme)
+;;(add-to-list 'load-path "~/.emacs.d/emacs-solarized")
+;;(require 'solarized-dark-theme)
+(load-theme 'wombat)
 
 (global-linum-mode 1)
 (setq linum-format "%4d \u2502 ")
