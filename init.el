@@ -25,29 +25,17 @@
 (setq default-tab-width 2)
 (setq-default indent-tabs-mode nil)
 
-;;set c++ indent
-(setq c-default-style "stroustrup"
-			c-basic-offset 4)
-
 ;;set javascript tab width
 (setq js-indent-level 2)
 
 ;;auto indent
 (define-key global-map (kbd "RET") 'newline-and-indent)
 
-(load "coffee-mode-master/coffee-mode.el")
 (setq whitespace-action '(auto-cleanup)) ;; automatically clean up bad whitespace
 (setq whitespace-style '(trailing space-before-tab indentation empty space-after-tab)) ;; only show bad whitespace
-(defun coffee-custom ()
-  "coffee-mode-hook"
- (set (make-local-variable 'tab-width) 2))
-
-(add-hook 'coffee-mode-hook
-  '(lambda() (coffee-custom)))
 
 ;; libraries
-(load "nxhtml/autostart.el")
-(load "php-mode/php-mode.el")
+;; (load "nxhtml/autostart.el")
 ;; M-x mumamo-no-chunk-coloring
 (setq warning-minimum-level :error) 
 
@@ -69,8 +57,8 @@
 (require 'move-lines-region)
 
 ;;haml mode
-(add-to-list 'load-path "~/.emacs.d/haml-mode")
-(require 'haml-mode)
+;;(add-to-list 'load-path "~/.emacs.d/haml-mode")
+;;(require 'haml-mode)
 
 ;; super turbo imenu using ido
 (defun ido-goto-symbol (&optional symbol-list)
@@ -135,12 +123,12 @@
  )
 
 ;; cucumber feature mode
-(add-to-list 'load-path "~/.emacs.d/feature-mode")
-(require 'feature-mode)
-(add-to-list 'auto-mode-alist '("\.feature$" . feature-mode))
+;; (add-to-list 'load-path "~/.emacs.d/feature-mode")
+;; (require 'feature-mode)
+;; (add-to-list 'auto-mode-alist '("\.feature$" . feature-mode))
 
 ;; snippets (https://github.com/capitaomorte/yasnippet)
-(add-to-list 'load-path
-             "~/.emacs.d/plugins/yasnippet")
-(require 'yasnippet)
-(yas-global-mode 1)
+;; (add-to-list 'load-path
+;;              "~/.emacs.d/plugins/yasnippet")
+;; (require 'yasnippet)
+;; (yas-global-mode 1)
