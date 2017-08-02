@@ -41,7 +41,7 @@
 ;; libraries
 ;; (load "nxhtml/autostart.el")
 ;; M-x mumamo-no-chunk-coloring
-(setq warning-minimum-level :error) 
+(setq warning-minimum-level :error)
 
 ;;Auto Mode Alist
 (add-to-list 'auto-mode-alist '("\\.json\\'" . javascript-mode))
@@ -118,7 +118,12 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- '(custom-safe-themes (quote ("fc5fcb6f1f1c1bc01305694c59a1a861b008c534cae8d0e48e4d5e81ad718bc6" "1e7e097ec8cb1f8c3a912d7e1e0331caeed49fef6cff220be63bd2a6ba4cc365" default))))
+ '(custom-safe-themes
+   (quote
+    ("fc5fcb6f1f1c1bc01305694c59a1a861b008c534cae8d0e48e4d5e81ad718bc6" "1e7e097ec8cb1f8c3a912d7e1e0331caeed49fef6cff220be63bd2a6ba4cc365" default)))
+ '(package-selected-packages
+   (quote
+    (git-gutter yasnippet web-mode emmet-mode ample-zen-theme))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
@@ -137,3 +142,10 @@
 ;; (require 'yasnippet)
 (yas-global-mode 1)
 (add-hook 'sgml-mode-hook 'emmet-mode)
+
+(require 'web-mode)
+(setq web-mode-ac-sources-alist
+  '(("\\.erb\\'" . (ac-source-emmet ac-source-yasnippet))))
+  (add-to-list 'auto-mode-alist '("\\.erb\\'" . web-mode))
+
+(global-git-gutter-mode +1)
